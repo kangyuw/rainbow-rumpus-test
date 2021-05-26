@@ -31,12 +31,10 @@ def move():
     global timestep
     request.get_data()
     logger.info(request.json)
-    if timestep % 3 == 0:
+    if timestep % 2 == 0:
         action = moves[random.randrange(len(moves))]
-    elif timestep % 3 == 1:
+    elif timestep % 2 == 1:
         action = 'T'
-    elif timestep % 3 == 2:
-        action = 'F'
     timestep += 1
     return action
 
